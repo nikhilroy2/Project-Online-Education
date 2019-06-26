@@ -1,0 +1,888 @@
+*, html{
+    box-sizing: border-box;  
+}
+body{
+    background: #001;
+    color: orangered;
+    text-shadow: 1px 1px rgb(114, 16, 133);
+    font-size: 15px;
+    margin: 0px;
+    padding: 0px;
+}
+a:hover{
+    color:white;
+}
+.dropdown-menu{
+    background: linear-gradient(60deg, orangered 70%, white 20%);
+}
+
+/*--------------------------------Header and Navigation End--------------------*/
+/*-------------------------------------Section 1 Start-----------------------------*/
+
+.section_1{
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    display:flex;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+.section_1 map{
+    float: left;
+    width: 250px;
+    height: 100%;
+    position: relative;
+    overflow:hidden;
+}
+.section_1 map .iframe, .section_1 map .map_middle{
+    backface-visibility: hidden;
+    position: absolute;
+    transition: 1s linear transform;
+    transform-origin: left;
+}
+.section_1 map .iframe{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    transform: perspective(100px) rotateY(0);
+}
+.section_1 map .map_middle{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: flex;
+    flex-flow: wrap row;
+    place-items: center;
+    place-content: center;
+    padding: 10px;
+    text-align:center;
+    transform: perspective(100px) rotateY(180deg);
+}
+.section_1 map:hover .iframe{
+    transform: perspective(100px) rotateY(180deg);
+}
+.section_1 map:hover .map_middle{
+    transform: perspective(100px) rotateY(0deg)
+}
+.map_social_button button{
+    border-radius: 100%;
+    background: black;
+    border: 1px dotted red;
+}
+.map_social_button button>a{
+    font-size: 25px;
+    display: inline-block;
+}
+/*--------------------------------Section_1 Section_item---------------------*/
+ .section_item{
+    width: 110px;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+    text-align:center;
+    border:1px solid rgba(250, 184, 184, .2);
+    border-radius: 5px;
+}
+[class*="sec_menu_item"]{
+    padding: 8px;
+    text-align: center;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    position: relative;
+}
+.sec_menu_item_1{
+    animation: sec_menu_item_xodd 1s linear backwards;
+    animation-delay: 1.5s;
+}
+.sec_menu_item_2{
+    animation: sec_menu_item_xodd 1s linear backwards;
+    animation-delay: 1s;
+}
+.sec_menu_item_3{
+    animation: sec_menu_item_xodd 1s linear backwards;
+    animation-delay: .5s;
+}
+.sec_menu_item_4{
+    animation: sec_menu_item_xodd 1s linear backwards;
+    animation-delay: 0s;
+}
+.sec_menu_item_5{
+    animation: sec_menu_item_xeven 1s linear backwards;
+    animation-delay: 0;
+}
+.sec_menu_item_6{
+    animation: sec_menu_item_xeven 1s linear backwards;
+    animation-delay: .5s;
+}
+.sec_menu_item_7{
+    animation: sec_menu_item_xeven 1s linear backwards;
+    animation-delay: 1s;
+}
+@keyframes sec_menu_item_xodd{
+    0%{
+        transform: translateX(-1500px);
+    }
+    100%{
+        transform: translateX(-0px);
+    }
+}
+@keyframes sec_menu_item_xeven{
+    0%{
+        transform: translateX(1500px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+
+[class*="sec_menu_item"] h6{
+    
+    font-size: 15px;
+    margin-top: -90px;
+    position: relative;
+}
+[class*="sec_menu_item"] h6::after{
+    content:"";
+    position: absolute;
+    bottom: -4px;
+    right: 0px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(red, yellow);
+    transform-origin: center;
+    transition: .5s linear transform;
+    transform:scaleX(0);
+}
+[class*="sec_menu_item"]:hover h6::after{
+    transform: scaleX(1);
+}
+
+[class*="sec_menu_item"] h5{
+    font-size: 13px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+[class*="sec_menu_item"] h5>span{
+    color: white;
+}
+.sec_btn_menu{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: flex-end;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    padding: 3px;
+}
+.sec_btn_menu button{
+    background: transparent;
+    border: none;
+}
+/*-------------------------------------Section 1 End-----------------------------*/
+/*-------------------------------------Section 2 Start-----------------------------*/
+.section_2{
+    display: flex; /*Layout of principal_pic & teacher_star_menu*/
+    flex-flow: row wrap; 
+   margin: 0px;
+    width: 100%;
+}
+
+.section_2 .principal_pic{
+    height: 350px;
+    flex-basis: 20%;
+    position:relative;
+}
+.section_2 .principal_pic img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+.section_2 .principal_pic strong{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(45deg, rgba(231, 12, 96, .8), hsla(60, 100%, 50%, .8));
+    color: turquoise;
+    text-shadow: 0px 1px 2px 0px rgba(243, 84, 84, 0.2);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+/*---------------------------------Section 2 Star Menu------------------------*/
+.active{
+    background: transparent!important;
+    color: white!important;
+}
+.nav-tabs{
+    border-bottom: 1px solid hsla(0, 0%, 100%, .3)!important;
+}
+
+
+
+.teacher_star_menu{
+    display: flex;
+    flex-flow: row wrap;
+    flex-basis: 80%;
+    min-height: 350px;
+    align-content: flex-start;
+}
+.teacher_star_menu_title{
+    flex-basis: 100%;
+    height: 50px;
+    text-align: center;
+    background: linear-gradient(black, rgb(158, 46, 5));
+    line-height: 50px;
+    font-size: 23px;
+    font-weight: 800;
+    color: rgb(235, 225, 225);
+    text-shadow: 3px 4px black;
+}
+.teacher_star_menu .custom_tablist{
+    flex-basis: 100%; 
+}
+.teacher_star_menu .custom_tab_content{
+    flex-basis: 100%;
+    margin-top: 25px;
+}
+/*----------------------------------Top Teacher------------------------------*/
+ .top_teacher{
+    display:flex;
+    flex-flow: row wrap;
+    padding: 0px 30px;
+}
+.top_teacher .top_teacher_item{
+    width: 13%;
+    height: 200px;
+    border: 1px solid rgb(53, 46, 46);
+    display: inline-block;
+    position: relative;
+    box-shadow: 0px 20px 30px 0px rgb(66, 60, 60);
+    /*-------------------------------------overflow problem ----------------*/
+}
+.top_teacher .top_teacher_item::after{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    margin-left: -20%;
+    margin-top: -20px;
+    background:  url("../../images/teacher.png") hsla(0, 0%, 0%, .2);
+    background-size: 100% 100%;
+    background-blend-mode: overlay;
+    border-radius: 50%;
+    z-index: 3;
+    border: 3px solid orangered;
+    border-top: transparent;
+    border-left: transparent;
+}
+.top_teacher_item #star{
+   
+    color: black;
+    z-index: 2;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    background: linear-gradient(hotpink, orangered); 
+}
+#star i:hover{
+    background: gold;
+    color: orange;
+}
+.top_teacher_item img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    transition: opacity .2s linear;
+}
+.top_teacher_item:hover img{
+    opacity: .6;
+}
+.top_teacher_item .go_live{
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 15px);
+    padding: 0px;
+    margin-top: -18px;
+    background: transparent;
+    border: none;
+    font-size: 32px;
+    color: hsla(16, 100%, 50%, .9);
+}
+/*----------------------------------Upcomming Teacher-----------------------*/
+.upcomming_teacher_area{
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-flow: row wrap;
+}
+.upcomming_teacher_item{
+    flex-basis: 20%;
+    height: 150px;
+    position: relative;
+    border-right: 1px solid hsla(16, 100%, 50%,.2);
+}
+.upcomming_teacher_item:nth-child(5){
+    border: none;
+}
+.upcomming_teacher_item .upm_link{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.upcomming_teacher_item .upm_link img{
+    width: 100%;
+    height: 100%;
+}
+.upcomming_marquee_item{
+    flex-basis: 100%;
+    animation: upcomming_marquee_item linear 5s;
+    padding-left: 30px;
+}
+@keyframes upcomming_marquee_item {
+    0%{
+        transform: translateX(400px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+
+/*-----------------------------------Be A Teacher ----------------------*/
+.be_teacher_area{
+    width: 100%;
+    min-height: 200px;
+    border: 1px solid hsla(0, 0%, 100%,.2);
+    display: flex;
+   
+    justify-content: space-between;
+}
+.be_teacher_info{
+    flex-basis: 40%;
+    background: linear-gradient(powderblue,indianred);
+}
+.be_teacher_info_title{
+    text-align: center;
+    background: linear-gradient( hotpink, hsla(16, 100%, 50%, .7));
+    padding: 5px;
+    color: white;
+    font-size: 1.2em;
+    text-shadow: 1px 2px orangered;
+    border-radius: 5px;
+}
+.be_teacher_info a{
+    padding: 7px;
+    color: orange;
+    margin-top: 5px;
+    background: linear-gradient(indigo, teal);
+    display: block;
+
+}
+.be_teacher_login {
+    flex-basis: 60%;
+    background: linear-gradient( orange, orangered);
+}
+.be_teacher_login .be_teacher_middle{
+    display: flex;
+    flex-flow: wrap column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 15px;
+
+}
+.be_teacher_login form{
+    box-shadow: 0px 20px 15px black;
+    text-align: center;
+}
+.be_teacher_login form input{
+    padding: 10px 11px;
+    width: 400px;
+    margin: 0px auto;
+    background: black;
+    border: none;
+    text-align: center;
+    color: white;
+    border-bottom: 1px solid hsla(0, 0%, 100%, .2);
+    width: 100%;
+   
+}
+.be_teacher_login form input::placeholder{
+    font-size: 18px;
+    color: hsla(0, 0%, 100%, .6);
+    text-shadow:  1px 1px blue;
+}
+.be_teacher_login form input[type="submit"]{
+    background: linear-gradient(red, yellow);
+    color: black;
+    font-size: 18px;
+    
+  
+}
+/*--------------------------------Section 2 End-----------------------------*/
+
+
+/*-----------------------------Section 3 Start------------------------------*/
+.section_3{
+    min-height: 300px;
+    position: relative;
+}
+.section_3 .section_3_title{
+    display: block;
+    min-width: 250px;
+    background: transparent;
+    color: inherit;
+    font-size: 25px;
+    margin: 0px auto;
+    letter-spacing: 5px;
+    position: relative;
+    padding: 10px 55px;
+    border: none;
+}
+.section_3 .section_3_title::after{
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: transparent;
+    border: 1px solid hotpink;
+    border-top: transparent;
+    border-right: transparent;
+    top: 0px; 
+    left: 0px;
+}
+.section_3 .section_3_title::before{
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: transparent;
+    border: 1px solid hotpink;
+    border-bottom: transparent;
+    border-left: transparent;
+    top: 0px;
+    right: 0px;
+}
+.course_plan{
+    display: flex;                  /*---------Course Plan Layout------------*/
+    flex-flow: wrap row;
+    justify-content: space-evenly;
+}
+.course_plan .course_plan_item{
+    min-height: 250px;
+    width: 300px;
+    border: 1px solid rgba(255, 255, 255, .2);
+    margin-top: 10px;
+    background: rgb(8, 1, 1);
+    transition: 1s linear transform;
+    position: relative;
+    overflow:hidden;
+}
+
+.course_plan .course_plan_item::after{
+    content: "";
+    position:absolute;
+    top: -13px;
+    right: -30px;
+    width: 100px;
+    height: 30px;
+    background: linear-gradient(rgb(236, 55, 55), red);
+    transform: rotateZ(33deg);
+
+}
+.course_plan_item_title{
+    background: rgb(17, 16, 16);
+    text-align: center;
+    padding: 8px 12px;
+    font-size: 18px;
+    color: dodgerblue;
+    letter-spacing: 3px;
+}
+.course_plan_item_title:hover{
+    color: yellow;
+    text-shadow:1px 1px red;
+    cursor: crosshair;
+}
+.course_plan_item ol{
+    margin: 0px;
+    padding: 0px;
+}
+.course_plan_item ol li{
+    list-style: none;
+    display: block;
+    padding: 2px 10px;
+    border-bottom: 1px solid rgba(117, 116, 116,.2);
+}
+.course_plan_item_price{
+     background: yellow;
+     text-align: center;
+     padding: 2px 0px;
+     font-size: 18px;
+     color: initial;
+}
+
+.course_plan_item_price span{
+    text-decoration: line-through;
+    display: inline-block;
+}
+.course_plan_item_price a{
+    display: inline-block;
+    padding: 0px 8px;
+    background: linear-gradient(red, orangered);
+    color: white;
+}
+/*-----------------------------Section 3 End------------------------------*/
+/*-----------------------------Section 4 Start------------------------------*/
+.section_4{
+    min-height: 500px;
+    display: flex;            /*----------Section_4 Layout -----------*/
+    flex-flow: row wrap;
+
+}
+.section_4 .sec_4_item_1{
+    flex-basis: 70%;
+    height: 100%;
+}
+.section_4 .sec_4_item_2{
+    flex-basis: 30%;
+    height: 100%;
+}
+/*-----------------------------Section_4 sec_4_item_1 Start --------------------*/
+.sec_4_item_1{
+    display: flex;
+    flex-flow: row wrap;
+}
+.sec_4_item_1 .sec_1_box{
+    flex-basis: 20%;
+    height: 200px;
+    border: 1px solid hsla(0, 0%, 100%, .18);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    padding: 10px;
+}
+.sec_1_title{
+    flex-basis: 100%;
+    padding: 20px 15px;
+    text-align: center;
+    font-size:25px;
+}
+.sec_1_title span{
+    position: relative;
+    display: inline-block;
+    background: hsla(60, 100%, 50%);
+    padding: 15px 18px;
+    color: black;
+}
+.sec_1_title span::after{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: yellow;
+    transform: skew(-60deg);
+    z-index: -12;
+}
+.sec_1_title span::before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: yellow;
+    transform: skew(60deg);
+    z-index: -12;
+}
+.sec_1_box img{
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    padding: 10px;
+}
+.sec_1_box .sec_skill{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: yellow;
+    text-decoration: none;
+    padding: 10px;
+    z-index: 2;
+    font-size: 18px;
+    word-break: break-all;
+    transition: background-color .5s linear;
+    background-color: rgba(12, 204, 28, 0.1);
+}
+.sec_1_box:hover .sec_skill{
+    background-color: rgba(12, 204, 28, 0.993);
+}
+.sec_1_box .sec_skill #opt{
+    opacity: 0;
+}
+.sec_1_box:hover .sec_skill #opt{
+    opacity: 1;
+}
+.sec_1_box .sec_skill .badge{
+    position: absolute;
+    top: 60%;
+    left: 60% ;
+    transition: 1s all;
+
+}
+.sec_1_box:hover .sec_skill .badge{
+   
+    top: 10%;
+    left: calc(50% - 20px) ;
+    background: linear-gradient(red, salmon);
+}
+.sec_1_box .sec_skill span{
+    display: inline-block;
+    padding: 10px;
+}
+.sec_1_box:last-child{
+    margin-top: 50px;
+    flex-basis: 100%;
+    height: 250px;
+    perspective: 800px;
+    transform-style: preserve-3d;
+    position: relative;
+    border: none;
+ 
+   
+}
+.sec_1_box:last-child img{
+    width: 80%;
+    margin: 0px auto;
+    border-radius: 4px;
+    box-shadow: 0px 3px 4px 0px white;
+    
+}
+.sec_1_box:last-child img:nth-child(1){
+    animation: sec_1_box_img1 2s linear infinite alternate ;
+}
+.sec_1_box:last-child img:nth-child(2){
+    animation: sec_1_box_img2 2s linear infinite alternate ;
+}
+@keyframes sec_1_box_img1{
+    0%{
+        transform: rotateY(50deg);
+    }
+    100%{
+        transform: rotateY(20deg);
+    }
+}
+@keyframes sec_1_box_img2{
+    0%{
+        transform: rotateY(-50deg);
+    }
+    100%{
+        transform: rotateY(-20deg);
+    }
+}
+/*-----------------------------Section_4 sec_4_item_1 End --------------------*/
+/*-----------------------------Section_4 sec_4_item_2 Start --------------------*/
+.sec_4_item_2{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.sec_4_item_2_title{
+    background:yellow;
+    padding: 12px;
+    font-size: 18px;
+    text-align: center;
+    color: initial;
+    letter-spacing: 2px;
+}
+.gpt_news_update{
+    position: relative;
+    padding: 12px;
+    height: 500px;
+    overflow-y: scroll;
+}
+.gpt_news_update ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.gpt_news_update .gpt_img{
+    width: 60px;
+    height: 70px;
+    border-radius: 7px;
+}
+.gpt_news_update ul li{
+    display: flex;
+}
+.gpt_post_menu{
+    padding: 0px 10px;
+}
+.gpt_post_menu .f_po{
+    color: white;
+    text-decoration: none;
+}
+.gpt_post_menu .f_po:hover{
+    color: inherit;
+}
+.y_update{
+    margin-top: 2px;
+}
+.youtube_update_v iframe{
+    width: 100%;
+    height: 200px;
+}
+/*-----------------------------Section 4 End------------------------------*/
+/*-----------------------------Section 5 Start------------------------------*/
+
+.section_5{
+    min-height: 400px;
+    margin-top: 50px;
+}
+.section_5 .sec_5_title{
+    padding: 12px;
+    background: linear-gradient(rgb(250, 250, 56), rgb(204, 204, 18), rgb(190, 190, 4));
+    max-width: 600px;
+    margin: 0px auto;
+    text-align: center;
+    color: black;
+    font-size: 18px;
+    position: relative;
+    margin-bottom: 15px;
+}
+.section_5 .sec_5_title::after{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgb(250, 250, 56), rgb(204, 204, 18), rgb(190, 190, 4));
+    transform: skew(42deg);
+    z-index: -1;
+
+}
+.section_5 .sec_5_title::before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgb(250, 250, 56), rgb(204, 204, 18), rgb(190, 190, 4));
+    transform: skew(-42deg);
+    z-index: -1;
+
+}
+.section_5 .student_say ul{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+.student_say_menu{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.student_say_menu .student_say_item{
+    width: 300px;
+    min-height: 300px;
+    flex-grow: 2;
+    position: relative;
+    box-shadow: 0px 7px 3px 0px hsla(0, 0%, 100%, .2);
+
+}
+.student_say_menu .student_say_item::after{
+    content: "Paid Member";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 30px;
+    height: 150px;
+    background: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    writing-mode: vertical-lr;
+}
+.student_say_menu .student_say_item::before{
+    content: "\f19d";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 700;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 70px;
+    color: hotpink;
+    margin-right: 10px;
+}
+
+.student_say_item , .student_say_item_last{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: background-color 1s linear;
+}
+.student_say_item:hover{
+    background: hsla(0, 0%, 100%, .1);
+}
+.student_icon{
+   
+    height: 70px;
+    width: 70px;
+}
+.student_icon img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: inline-block;
+    border: 4px solid orangered;
+    border-left: transparent;
+    border-top: transparent;
+}
+.student_name{
+    background: orange;
+    padding: 5px 10px;
+    color: black;
+}
+.std_star{
+    background: white;
+    padding: 5px 10px;
+    display: inline-block;
+    letter-spacing: 5px;
+}
+.std_review{
+    color: orchid;
+    padding: 5px 12px;
+}
+.student_say_item_last{
+    flex-basis: 100%;
+    height: 300px;
+    perspective: 300px;
+    font-family: algerian;
+    font-size: 85px;
+    text-align: center;
+}
+/*-----------------------------Section 5 End------------------------------*/
